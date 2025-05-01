@@ -1,0 +1,48 @@
+<div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-10 w-auto" src="https://weslapp.com/wesl_logo.png"
+        alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+</div>
+
+<div class="event-container" *ngIf="!isLoading">
+    <div *ngFor="let event of events" class="event-card" (click)="onCardClick(event)">
+        <div class="ticket-header">
+            <h2>{{ event.event_name }}</h2>
+        </div>
+        <div class="ticket-body">
+            <p><strong>Date:</strong> {{ event.event_date }}</p>
+            <p><strong>Time:</strong> {{ event.event_time }}</p>
+            <p><strong>Location:</strong> {{ event.event_address }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Confetti Container -->
+<div class="confetti-container" *ngIf="isModalOpen">
+    <div class="confetti" style="background: #ff6f61; left: 10%; animation-delay: 0s;"></div>
+    <div class="confetti" style="background: #6bff61; left: 25%; animation-delay: 0.5s;"></div>
+    <div class="confetti" style="background: #61b4ff; left: 40%; animation-delay: 1s;"></div>
+    <div class="confetti" style="background: #ff61b4; left: 55%; animation-delay: 1.5s;"></div>
+    <div class="confetti" style="background: #ffb461; left: 70%; animation-delay: 2s;"></div>
+</div>
+
+<!-- Modal Overlay -->
+<div class="modal-overlay" *ngIf="isModalOpen">
+    <div class="modal-content">
+        <h2>Congratulations!</h2>
+        <p><strong>Name:</strong> {{ (selectedUser?.firstName ?? '') + ' ' + (selectedUser?.lastName ?? '') }}</p>
+        <p><strong>Email:</strong> {{ selectedUser?.email ?? 'Not provided' }}</p>
+        <p><strong>Mobile:</strong> {{ selectedUser?.mobile ?? 'Not provided' }}</p>
+        <p><strong>Address:</strong> {{ selectedUser?.address ?? 'Not provided' }}</p>
+        <button (click)="closeModal()">Close</button>
+    </div>
+</div>
+
+
+
+<div *ngIf="isLoading">
+    <!-- Display the item content if it exists -->
+    <div class="event-container centered-container">
+        <img src="https://media.tenor.com/Ma_w0S79XHYAAAAj/load-rewards-load.gif" alt="No Item Available" />
+    </div>
+</div>
