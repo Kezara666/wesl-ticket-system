@@ -1,27 +1,55 @@
-# WeslTicketSystem
+# WESL Ticket System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+Angular web application for event ticket verification and winner management, built for WESL (Workforce & Employment Services Lanka).
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Staff log in to verify tickets and manage winning entries through a lightweight admin UI. The app uses standalone Angular components with PrimeNG for a clean, responsive interface.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Staff login and authentication flow
+- Ticket verification screen (`/ticket`)
+- Winner/ticket management UI
+- Firebase hosting configuration included
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular 18** (standalone components, routing)
+- **PrimeNG 18** + PrimeUI themes
+- **TypeScript 5.5**
+- **Firebase** (deployment)
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+- Node.js 18+
+- Angular CLI 18+
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Install & run
 
-## Further help
+```bash
+npm install
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Open [http://localhost:4200](http://localhost:4200).
+
+### Build
+
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src/app/
+├── auth/          # Login components
+└── ticket-win/    # Ticket verification & winner UI
+```
+
+## Author
+
+Kezara Lakshan — [GitHub](https://github.com/Kezara666) · [Portfolio](https://kesara-68dbc.web.app/)
